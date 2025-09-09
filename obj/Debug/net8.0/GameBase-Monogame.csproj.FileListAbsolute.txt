@@ -1,0 +1,12 @@
+/home/diogodam/Jogos/GameBase-Monogame/obj/Debug/net8.0/GameBase-Monogame.csproj.AssemblyReference.cache
+/home/diogodam/Jogos/GameBase-Monogame/obj/Debug/net8.0/GameBase-Monogame.GeneratedMSBuildEditorConfig.editorconfig
+/home/diogodam/Jogos/GameBase-Monogame/obj/Debug/net8.0/GameBase-Monogame.AssemblyInfoInputs.cache
+/home/diogodam/Jogos/GameBase-Monogame/obj/Debug/net8.0/GameBase-Monogame.AssemblyInfo.cs
+/home/diogodam/Jogos/GameBase-Monogame/obj/Debug/net8.0/GameBase-Monogame.csproj.CoreCompileInputs.cache
+/home/diogodam/Jogos/GameBase-Monogame/bin/Debug/net8.0/GameBase-Monogame.deps.json
+/home/diogodam/Jogos/GameBase-Monogame/bin/Debug/net8.0/GameBase-Monogame.dll
+/home/diogodam/Jogos/GameBase-Monogame/bin/Debug/net8.0/GameBase-Monogame.pdb
+/home/diogodam/Jogos/GameBase-Monogame/obj/Debug/net8.0/GameBase-Monogame.dll
+/home/diogodam/Jogos/GameBase-Monogame/obj/Debug/net8.0/refint/GameBase-Monogame.dll
+/home/diogodam/Jogos/GameBase-Monogame/obj/Debug/net8.0/GameBase-Monogame.pdb
+/home/diogodam/Jogos/GameBase-Monogame/obj/Debug/net8.0/ref/GameBase-Monogame.dll
