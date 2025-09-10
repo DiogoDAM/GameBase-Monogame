@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace GameBase;
 
-public abstract class Entity : BaseActive
+public abstract class Entity : BaseActive, IDraw, IUpdate
 {
 	public uint Id;
 
@@ -46,12 +46,22 @@ public abstract class Entity : BaseActive
 	}
 
 	//Components Methods 
-	public void AddComponents(Component c) 
+	public void AddComponent(Component c) 
 	{
 		Components.Add(c);
 	}
 
-	public bool RemoveComponents<T>() where T : Component
+	public T AddComponent<T>() where T : Component, new()
+	{
+		T c = new T();
+
+		c.Entity = this;
+
+		return c;
+	}
+
+
+	public bool RemoveComponent<T>() where T : Component
 	{
 		var c = Components.Find(co => co is T);
 

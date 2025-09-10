@@ -7,7 +7,7 @@ public sealed class Camera2D
 {
 	public Vector2 Position { get; private set; }
 	public float Rotation { get; private set; }
-	public Vector2 Scale { get; private set; } = Base.DefaultScale;
+	public Vector2 Scale { get; private set; } = Core.DefaultScale;
 
 	public Vector2 Offset;
 
@@ -22,6 +22,13 @@ public sealed class Camera2D
 				* Matrix.CreateRotationZ(Rotation)
 				* Matrix.CreateScale(Scale.X, Scale.Y, 1f);
 		}
+	}
+
+	public Camera2D()
+	{
+		Viewport = new();
+		Viewport.Width = Core.WindowWidth;
+		Viewport.Height = Core.WindowHeight;
 	}
 
 	public Camera2D(int w, int h)

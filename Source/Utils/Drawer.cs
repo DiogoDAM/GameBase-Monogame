@@ -23,7 +23,7 @@ public static class Drawer
 	//DrawLines
 	public static void DrawStraightLine(Vector2 pos, int length, Color color, int thicknes=1)
 	{
-		Base.SpriteBatch.Draw(_pixelTexture, new Rectangle((int)pos.X, (int)pos.Y, length, thicknes), color);
+		Core.SpriteBatch.Draw(_pixelTexture, new Rectangle((int)pos.X, (int)pos.Y, length, thicknes), color);
 	}
 
 	public static void DrawLine(Vector2 start, Vector2 end, Color color, int thicknes=1, float depth=1f)
@@ -31,7 +31,7 @@ public static class Drawer
 		float distance = Vector2.Distance(start, end);
 		float angle = (float)Math.Atan2(end.Y - start.Y, end.X - start.X);
 
-		Base.SpriteBatch.Draw(_pixelTexture, start, null, color, angle, Vector2.Zero, new Vector2(distance, thicknes), SpriteEffects.None, depth);
+		Core.SpriteBatch.Draw(_pixelTexture, start, null, color, angle, Vector2.Zero, new Vector2(distance, thicknes), SpriteEffects.None, depth);
 	}
 
 
@@ -64,13 +64,13 @@ public static class Drawer
 
 	public static void DrawFillRectangle(Vector2 pos, int w, int h, Color color, float rot=0f, float depth=1f)
 	{
-		Base.SpriteBatch.Draw(_pixelTexture, pos, null, color, rot, Vector2.Zero, new Vector2(w,h), SpriteEffects.None, depth);
+		Core.SpriteBatch.Draw(_pixelTexture, pos, null, color, rot, Vector2.Zero, new Vector2(w,h), SpriteEffects.None, depth);
 	}
 
 
 	public static void DrawFillRectangle(Rectangle rect, Color color, float rot=0f, float depth=1f)
 	{
-		Base.SpriteBatch.Draw(_pixelTexture, rect, null, color, rot, Vector2.Zero, SpriteEffects.None, depth);
+		Core.SpriteBatch.Draw(_pixelTexture, rect, null, color, rot, Vector2.Zero, SpriteEffects.None, depth);
 	}
 
 
@@ -129,7 +129,7 @@ public static class Drawer
 
 		texCircle.SetData(data);
 
-		Base.SpriteBatch.Draw(texCircle, pos, color);
+		Core.SpriteBatch.Draw(texCircle, pos, color);
 	}
 
 

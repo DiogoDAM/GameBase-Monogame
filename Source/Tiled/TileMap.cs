@@ -14,7 +14,7 @@ public sealed class TileMap
 
 	public TileMap()
 	{
-		DrawBounds = new Rectangle(0,0, Base.WindowWidth, Base.WindowHeight);
+		DrawBounds = new Rectangle(0,0, Core.WindowWidth, Core.WindowHeight);
 		Matrix = Matrix.CreateTranslation(0,0,0);
 	}
 
@@ -25,6 +25,7 @@ public sealed class TileMap
 		switch(Map.Orientation)
 		{
 			case "orthogonal": Renderer = new TiledOrthogonalRenderer(); break;
+			case "isometric": Renderer = new TiledIsometricRenderer(); break;
 			default: throw new Exception($"TiledMap Orientation not supported: {Map.Orientation}");
 		}
 	}

@@ -4,11 +4,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace GameBase.Tiled;
 
-public class TiledOrthogonalRenderer : ITiledRenderer 
+public class TiledIsometricRenderer : ITiledRenderer 
 {
 	public void DrawMap(TiledMap map, Matrix transformMatrix, Rectangle drawBounds)
 	{
-		if(map.Orientation != "orthogonal") throw new Exception("TiledOrthogonalRenderer need to be a orthogonal orientation");
+		if(map.Orientation != "isometric") throw new Exception("TiledOrthogonalRenderer need to be a isometric orientation");
 
 		foreach(TiledLayer layer in map.Layers)
 		{
@@ -38,14 +38,20 @@ public class TiledOrthogonalRenderer : ITiledRenderer
 				int index = layer.Data[x + y * layer.Width];
 				if(index == 0) continue;
 
-				Vector2 pos = new Vector2((map.TileWidth * x), (map.TileHeight * y));
+				Vector2 pos = new Vector2(x, y);
 				Color color = Color.White * layer.Opacity;
 
-				Rectangle tile = atlas[index-1].SourceRectangle;
-				tile.X = (int)pos.X;
-				tile.Y = (int)pos.Y;
+				Vector2 isoPos = Utilities.MapToIsometricWorld(pos.ToPoint(), map.TileWidth, map.TileHeight);
 
-				if(drawBounds.Intersects(tile)) Core.SpriteBatch.Draw(texture, pos, atlas[index-1].SourceRectangle, color);
+				Rectangle tile = atlas[index-1].SourceRectangle;
+				tile.X = (int)isoPos.X;
+				tile.Y = (int)isoPos.Y;
+
+				Rectangle rectToDraw = atlas[index-1].SourceRectangle;
+				rectToDraw.Height *= 2;
+
+
+				if(drawBounds.Intersects(tile)) Core.SpriteBatch.Draw(texture, isoPos, rectToDraw, color);
 			}
 		}
 

@@ -4,6 +4,10 @@ public abstract class Component : BaseActive
 {
 	public Entity Entity;
 
+	public Component()
+	{
+	}
+
 	public Component(Entity e)
 	{
 		Entity = e;

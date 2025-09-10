@@ -1,5 +1,3 @@
-using System;
-
 namespace GameBase;
 
 public abstract class Scene : BaseActive

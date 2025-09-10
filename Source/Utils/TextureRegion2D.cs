@@ -36,12 +36,12 @@ public sealed class TextureRegion2D
 
 	public void Draw(Vector2 pos, Color color)
 	{
-		Base.SpriteBatch.Draw(Texture, pos, SourceRectangle, color);
+		Core.SpriteBatch.Draw(Texture, pos, SourceRectangle, color);
 	}
 
 	public void Draw(Vector2 pos, Color color, float rotation, Vector2 origin, Vector2 scale, SpriteEffects flip, float depth)
 	{
-		Base.SpriteBatch.Draw(Texture, pos, SourceRectangle, color, rotation, origin, scale, flip, depth);
+		Core.SpriteBatch.Draw(Texture, pos, SourceRectangle, color, rotation, origin, scale, flip, depth);
 	}
 
 	public override string ToString() => $"(Texture2D: {Texture}, SourceRectangle: {SourceRectangle})";

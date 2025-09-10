@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace GameBase;
 
-public sealed class RenderComponent : Component 
+public sealed class SpriteRender : Component 
 {
 	public TextureRegion2D Region;
 	public Vector2 Origin;
@@ -12,7 +12,11 @@ public sealed class RenderComponent : Component
 	public SpriteEffects Flip;
 	public float Depth;
 
-	public RenderComponent(Entity e) : base(e)
+	public SpriteRender() : base()
+	{
+	}
+
+	public SpriteRender(Entity e) : base(e)
 	{
 	}
 

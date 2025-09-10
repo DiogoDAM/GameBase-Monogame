@@ -6,10 +6,10 @@ using System;
 
 namespace GameBase;
 
-public class Base : Game
+public class Core : Game
 {
-	private static Base s_instance;
-	public static Base Instance => s_instance;
+	private static Core s_instance;
+	public static Core Instance => s_instance;
 
 	public static new GraphicsDevice GraphicsDevice { get; private set; }
 	public static GraphicsDeviceManager Graphics { get; private set; }
@@ -24,9 +24,11 @@ public class Base : Game
 	public static int GridSize = 16;
 	public static Vector2 DefaultScale = Vector2.One;
 
+	public static Scene CurrentScene;
+
 	public static bool IsDebugMode { get; protected set; }
 
-	public Base(string windowTitle, int ww, int wh, bool isfullscreen, bool isdebug=true)
+	public Core(string windowTitle, int ww, int wh, bool isfullscreen, bool isdebug=true)
 	{
 		s_instance = this;
 
@@ -58,7 +60,10 @@ public class Base : Game
 
 	protected override void Update(GameTime gameTime)
 	{
+		Input.Update();
 		Time.DeltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+		CurrentScene.Update(Time);
 
 		base.Update(gameTime);
 	}
@@ -73,6 +78,8 @@ public class Base : Game
 	protected override void Draw(GameTime gameTime)
 	{
 		base.Draw(gameTime);
+
+		CurrentScene.Draw();
 	}
 
 	public void SetWindowSize(int ww, int wh)

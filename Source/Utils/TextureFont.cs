@@ -22,11 +22,11 @@ public sealed class TextureFont
 
 	public void DrawString(Vector2 pos, Color color)
 	{
-		Base.SpriteBatch.DrawString(Font, Text, pos, color);
+		Core.SpriteBatch.DrawString(Font, Text, pos, color);
 	}
 
 	public void DrawString(Vector2 pos, Color color, float rotation, Vector2 origin, Vector2 scale, SpriteEffects flip, float depth)
 	{
-		Base.SpriteBatch.DrawString(Font, Text, pos, color, rotation, origin, scale, flip, depth);
+		Core.SpriteBatch.DrawString(Font, Text, pos, color, rotation, origin, scale, flip, depth);
 	}
 }

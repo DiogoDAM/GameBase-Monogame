@@ -3,16 +3,20 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace GameBase;
 
-public sealed class TextRenderComponent : Component 
+public sealed class SpriteTextRender : Component 
 {
 	public TextureFont Font;
 	public Vector2 Origin;
 	public Vector2 Offset;
-	public Color Color;
+	public Color Color = Color.White;
 	public SpriteEffects Flip;
 	public float Depth;
 
-	public TextRenderComponent(Entity e) : base(e)
+	public SpriteTextRender() : base()
+	{
+	}
+
+	public SpriteTextRender(Entity e) : base(e)
 	{
 	}
 
