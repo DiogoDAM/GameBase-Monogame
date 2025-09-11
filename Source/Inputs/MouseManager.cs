@@ -8,10 +8,13 @@ public class MouseManager
 {
 	private MouseState _prev;
 	private MouseState _curr;
-	private Camera2D Camera;
+	public Camera2D Camera;
 
 	public Vector2 CursorPosition => _curr.Position.ToVector2();
+	public Vector2 PreviousCursorPosition => _prev.Position.ToVector2();
 	public Rectangle CursorBounds => new Rectangle((int)GlobalCursorPosition.X, (int)GlobalCursorPosition.Y, 1, 1);
+
+	public int MouseWheelValue => _curr.ScrollWheelValue / 7;
 
 	public Vector2 GlobalCursorPosition
 	{
@@ -20,6 +23,24 @@ public class MouseManager
 			if(Camera == null) return CursorPosition;
 			else return Vector2.Transform(_curr.Position.ToVector2(), Matrix.Invert(Camera.Matrix));
 		}
+	}
+
+	public bool MouseWheelValueChanged()
+	{
+		return _curr.ScrollWheelValue != _prev.ScrollWheelValue;
+	}
+
+	public bool CursorPositionChanged()
+	{
+		return _curr.Position != _prev.Position;
+	}
+
+	public bool CursorGlobalPositionChanged()
+	{
+		Vector2 prev = (Camera == null) ? _prev.Position.ToVector2() : Vector2.Transform(_prev.Position.ToVector2(), Matrix.Invert(Camera.Matrix));
+		Vector2 curr = GlobalCursorPosition;
+
+		return prev != curr;
 	}
 
 	public MouseManager()

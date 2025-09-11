@@ -5,9 +5,9 @@ namespace GameBase;
 
 public sealed class Camera2D
 {
-	public Vector2 Position { get; private set; }
-	public float Rotation { get; private set; }
-	public Vector2 Scale { get; private set; } = Core.DefaultScale;
+	public Vector2 Position { get; set; }
+	public float Rotation { get; set; }
+	public Vector2 Scale { get; set; } = Core.DefaultScale;
 
 	public Vector2 Offset;
 
