@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace GameBase;
 
-public sealed class Camera2D
+public class Camera2D
 {
 	public Vector2 Position { get; set; }
 	public float Rotation { get; set; }

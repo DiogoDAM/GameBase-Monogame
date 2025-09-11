@@ -11,7 +11,6 @@ public class MouseManager
 	public Camera2D Camera;
 
 	public Vector2 CursorPosition => _curr.Position.ToVector2();
-	public Vector2 PreviousCursorPosition => _prev.Position.ToVector2();
 	public Rectangle CursorBounds => new Rectangle((int)GlobalCursorPosition.X, (int)GlobalCursorPosition.Y, 1, 1);
 
 	public int MouseWheelValue => _curr.ScrollWheelValue / 7;
