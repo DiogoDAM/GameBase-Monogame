@@ -27,7 +27,6 @@ public abstract class Collider : IDisposable, IPrototype
 		{
 			case BoxCollider box: return Collide(box);
 			case CircleCollider circle: return Collide(circle);
-			case ColliderList list: return Collide(list);
 			default: return false;
 		}
 
@@ -35,7 +34,6 @@ public abstract class Collider : IDisposable, IPrototype
 
 	public abstract bool Collide(BoxCollider box);
 	public abstract bool Collide(CircleCollider circle);
-	public abstract bool Collide(ColliderList list);
 	public abstract bool Collide(Vector2 vec);
 
 	public void Dispose()

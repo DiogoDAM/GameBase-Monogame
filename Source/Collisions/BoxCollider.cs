@@ -30,16 +30,6 @@ public sealed class BoxCollider : Collider
 		return CollisionHelper.CheckRectCircle(Shape, circle.Shape);
     }
 
-    public override bool Collide(ColliderList list)
-    {
-		foreach(Collider col in list)
-		{
-			if(Collide(col)) return true;
-		}
-
-		return false;
-    }
-
     public override bool Collide(Vector2 vec)
     {
 		return Shape.Contains(vec);
